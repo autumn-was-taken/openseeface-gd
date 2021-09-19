@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://entities/vss-2d/VSS2DSkeleton.gd" type="Script" id=1]
+
+[node name="VSS2DSkeleton" type="Node"]
+script = ExtResource( 1 )

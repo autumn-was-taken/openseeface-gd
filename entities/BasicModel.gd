@@ -15,7 +15,7 @@ var additional_bone_damp: float = 0.3
 # Gaze
 var gaze_strength: float = 0.5
 
-onready var skeleton: Skeleton = find_node(SKELETON_NODE)
+onready var skeleton = find_node(SKELETON_NODE)
 onready var head_bone_id: int = skeleton.find_bone(head_bone)
 # String : int
 var additional_bone_ids: Dictionary

@@ -1,0 +1,60 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://entities/vss-2d/VSS2DBone.gd" type="Script" id=1]
+[ext_resource path="res://assets/icon.png" type="Texture" id=2]
+
+[node name="VSS2DBone" type="Sprite3D"]
+billboard = 1
+shaded = true
+double_sided = false
+script = ExtResource( 1 )
+
+[node name="ViewportContainer" type="ViewportContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+stretch = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Viewport" type="Viewport" parent="ViewportContainer"]
+size = Vector2( 1600, 900 )
+transparent_bg = true
+handle_input_locally = false
+render_target_update_mode = 3
+
+[node name="NodeBase" type="Node2D" parent="ViewportContainer/Viewport"]
+
+[node name="Polygon2D" type="Polygon2D" parent="ViewportContainer/Viewport/NodeBase"]
+texture = ExtResource( 2 )
+skeleton = NodePath("../Skeleton2D")
+polygon = PoolVector2Array( -0.136986, -0.342466, 31.9178, -0.136988, 63.7671, -0.410959, 63.9726, 33.9726, 63.8356, 63.6301, 31.5753, 63.9041, 0.547947, 63.9041, -0.0684929, 31.9863 )
+uv = PoolVector2Array( -0.136986, -0.342466, 31.9178, -0.136988, 63.7671, -0.410959, 63.9726, 33.9726, 63.8356, 63.6301, 31.5753, 63.9041, 0.547947, 63.9041, -0.0684929, 31.9863 )
+bones = [ NodePath("Root"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("Root/Up"), PoolRealArray( 0.5, 1, 0.5, 0, 0, 0, 0, 0 ), NodePath("Root/Right"), PoolRealArray( 0, 0, 0.5, 1, 0.5, 0, 0, 0 ), NodePath("Root/Down"), PoolRealArray( 0, 0, 0, 0, 0.5, 1, 0.5, 0 ), NodePath("Root/Left"), PoolRealArray( 0.5, 0, 0, 0, 0, 0, 0.5, 1 ) ]
+
+[node name="Skeleton2D" type="Skeleton2D" parent="ViewportContainer/Viewport/NodeBase"]
+
+[node name="Root" type="Bone2D" parent="ViewportContainer/Viewport/NodeBase/Skeleton2D"]
+position = Vector2( 32.602, 34.047 )
+rotation = -1.5708
+rest = Transform2D( -3.61999e-06, -1, 1, -3.61999e-06, 32.602, 34.047 )
+default_length = 1.0
+
+[node name="Up" type="Bone2D" parent="ViewportContainer/Viewport/NodeBase/Skeleton2D/Root"]
+rest = Transform2D( 1, 0, 0, 1, 0, 0 )
+default_length = 32.0
+
+[node name="Right" type="Bone2D" parent="ViewportContainer/Viewport/NodeBase/Skeleton2D/Root"]
+rotation = 1.5708
+rest = Transform2D( -3.61999e-06, 1, -1, -3.61999e-06, 0, 0 )
+default_length = 32.0
+
+[node name="Down" type="Bone2D" parent="ViewportContainer/Viewport/NodeBase/Skeleton2D/Root"]
+rotation = 3.14159
+rest = Transform2D( -1, 2.53518e-06, -2.53518e-06, -1, 0, 0 )
+default_length = 32.0
+
+[node name="Left" type="Bone2D" parent="ViewportContainer/Viewport/NodeBase/Skeleton2D/Root"]
+rotation = 4.71239
+rest = Transform2D( 9.65599e-07, -1, 1, 9.65599e-07, 0, 0 )
+default_length = 32.0

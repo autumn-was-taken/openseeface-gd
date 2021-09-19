@@ -93,6 +93,21 @@ _global_script_classes=[ {
 "class": "VRMTopLevel",
 "language": "GDScript",
 "path": "res://addons/vrm/vrm_toplevel.gd"
+}, {
+"base": "Sprite3D",
+"class": "VSS2DBone",
+"language": "GDScript",
+"path": "res://entities/vss-2d/VSS2DBone.gd"
+}, {
+"base": "BasicModel",
+"class": "VSS2DModel",
+"language": "GDScript",
+"path": "res://entities/vss-2d/VSS2DModel.gd"
+}, {
+"base": "Node",
+"class": "VSS2DSkeleton",
+"language": "GDScript",
+"path": "res://entities/vss-2d/VSS2DSkeleton.gd"
 } ]
 _global_script_class_icons={
 "BDD": "",
@@ -111,7 +126,10 @@ _global_script_class_icons={
 "TranslationManager": "",
 "VRMMappings": "",
 "VRMModel": "",
-"VRMTopLevel": ""
+"VRMTopLevel": "",
+"VSS2DBone": "",
+"VSS2DModel": "",
+"VSS2DSkeleton": ""
 }
 
 [application]
