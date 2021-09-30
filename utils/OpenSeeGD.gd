@@ -265,7 +265,6 @@ func _on_start_tracker() -> void:
 					var exe_path: String = "%s%s" % [OS.get_executable_path().get_base_dir(), "/OpenSeeFaceFolder/OpenSeeFace/facetracker.exe"]
 					if OS.is_debug_build():
 						exe_path = "%s%s" % [ProjectSettings.globalize_path("res://export"), "/OpenSeeFaceFolder/OpenSeeFace/facetracker.exe"]
-						print(exe_path)
 					pid = OS.execute(exe_path,
 							face_tracker_options, false, [], true)
 				"osx", "x11":
